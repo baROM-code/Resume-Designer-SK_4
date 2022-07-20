@@ -15,7 +15,7 @@ create table users
 create table works
 (
     id           bigserial primary key,
-    user_id      bigint      not null references users (id),
+    user_id      bigint       references users (id), --not null
     organization varchar(90) not null,
     post         varchar(40) not null,
     startwork    date        not null,
@@ -28,7 +28,7 @@ create table works
 create table educations
 (
     id           bigserial primary key,
-    user_id      bigint       not null references users (id),
+    user_id      bigint        references users (id), --not null
     organization varchar(150) not null,
     speciality   varchar(100) not null,
     year_end     date         not null,
@@ -39,7 +39,7 @@ create table educations
 create table resumes
 (
     id           bigserial primary key,
-    user_id      bigint       not null references users (id),
+    user_id      bigint        references users (id), --not null
     post         varchar(150) not null,
     salary       bigint       not null,
     schedule     varchar(100) not null,
