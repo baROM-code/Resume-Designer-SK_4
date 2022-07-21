@@ -29,7 +29,7 @@
 </div>
 <div class="top__info_heading">
     <h2 class="head-contact">Форма создания резюме</h2>
-    <p class="projec__text_cont">Пока контакты, но можно разместить несколько форм заполнения резюме. </p>
+    <p class="projec__text_cont">Все поля отмеченные звездочкой обязательны для заполнения. </p>
 </div>
 <div class="contact">
     <div class="container">
@@ -50,14 +50,19 @@
                         <p class="full__name">Пароль</p>
                         <input class="contactlist__message_name_input" type="password" id="newPassword"
                                ng-model="newUser.password" placeholder="Пароль">
+                        <p class="full__name">Подтвердить пароль</p>
+                        <input class="contactlist__message_name_input" type="password" id="newConfirmPassword"
+                               ng-model="newUser.confirmPassword" placeholder="Подтвердить пароль">
                     </div>
                 </div>
                 <div class="contactlist-right">
                     <div class="contactlist-right-container">
                         <h4 class="head_text_message">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</h4>
-                        <p class="full__name">Мужчина/Женщина</p>
-                        <input class="contactlist__message_name_input" type="text" id="newGender"
-                               ng-model="newUser.gender" placeholder="Муж/Жен">
+                        <p class="full__name">Ваш пол</p>
+                        <input  ng-model="newUser.gender" name="gender" id="Male" type="radio" value="M" checked>
+                        <label for="Male">Мужской</label>
+                        <input  ng-model="newUser.gender" name="gender" id="Female" type="radio" value="F">
+                        <label for="Female">Женский</label>
                         <p class="full__name">Дата Рождения</p>
                         <input class="contactlist__message_name_input" type="date" id="newDateOfbirth"
                                ng-model="newUser.dateOfbirth" placeholder=Дата Рождения>
@@ -104,7 +109,7 @@
                 <div class="contactlist-right">
                     <div class="contactlist-right-container">
                         <h4 class="head_text_message">ЖЕЛАЕМАЯ РАБОТА</h4>
-                        <p class="full__name">Желаемая должность</p>
+                        <p class="full__name">Должность</p>
                         <input class="contactlist__message_name_input" type="text" id="newPost"
                                ng-model="newResume.post" placeholder="Должность">
                         <p class="full__name">Уровень зарплаты</p>
