@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.devteam.resume.converters.ResumeConverter;
 import ru.devteam.resume.converters.UserConverter;
 import ru.devteam.resume.dtos.ResumeDto;
+
 import ru.devteam.resume.entities.Resume;
 import ru.devteam.resume.repositories.EducationRepository;
 import ru.devteam.resume.repositories.ResumeRepository;
@@ -33,6 +34,7 @@ public class ResumeService {
         resume.setEducations(educationRepository.findByUserId(id));
         resume.setWorks(workRepository.findByUserId(id));
         return resume;
+
     }
 
 }

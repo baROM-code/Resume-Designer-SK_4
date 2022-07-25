@@ -9,6 +9,8 @@ import ru.devteam.resume.enums.ScheduleType;
 import java.time.LocalDate;
 import java.util.List;
 
+import java.time.LocalDateTime;
+
 @Data
 @NoArgsConstructor
 public class ResumeDto {

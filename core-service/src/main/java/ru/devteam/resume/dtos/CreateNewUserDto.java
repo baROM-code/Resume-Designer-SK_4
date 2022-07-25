@@ -16,6 +16,4 @@ public class CreateNewUserDto {
     private GenderType gender;
     private LocalDate dateOfBirth;
     private String email;
-
-
 }

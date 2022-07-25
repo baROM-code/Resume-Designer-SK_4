@@ -23,8 +23,10 @@ public class ResumeController {
         return resumeService.findAll();
     }
 
+
     @GetMapping("/{id}")
     public ResumeDto getResumeById(@PathVariable Long id) {
         return resumeService.findResumeById(id);
+
     }
 }

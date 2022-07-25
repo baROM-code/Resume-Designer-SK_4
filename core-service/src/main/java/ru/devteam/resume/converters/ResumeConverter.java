@@ -16,5 +16,4 @@ public class ResumeConverter {
         resumeDto.setAboutMyself(r.getAboutMyself());
         return resumeDto;
     }
-
 }
