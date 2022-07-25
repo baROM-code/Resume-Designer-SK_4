@@ -6,7 +6,7 @@ create table users
     lastname  varchar(36) not null,
     password      varchar(16) not null,
     gender        char,
-S    dateofbirth   date,
+    dateofbirth   date,
     email         varchar(50) unique,
     created_at    timestamp default current_timestamp,
     updated_at    timestamp default current_timestamp
