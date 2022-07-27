@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+    <script src="work.js"></script>
+</head>
+<body ng-app="resume" ng-controller="workController">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <h1>Опыт работы</h1>
+            <div ng-repeat="work in works">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="inputOrganization">Организация</label>
+                            <input type="text" class="form-control" id="inputOrganization" ng-model="work.organization">
+                        </div>
+                        <div class="form-group col">
+                            <label for="inputPost">Должность</label>
+                            <input type="text" class="form-control" id="inputPost" ng-model="work.post">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputProgress">Должностные обязанности и достижения</label>
+                        <input type="text" class="form-control" id="inputProgress" ng-model="work.progress">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="inputStartWork">Устроился</label>
+                            <input type="date" class="form-control" id="inputStartWork" ng-model="work.startWork | date:'yyyy-MM-dd'">
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="inputEndWork">Уволился</label>
+                            <input type="date" class="form-control" id="inputEndWork" ng-model="work.endWork">
+                        </div>
+                    </div>
+                    <button class="btn btn-info" ng-click="updateWork(work.id, work, 1)">Изменить</button>
+                    <button class="btn btn-danger" ng-click="deleteWork(work.id)">Удалить</button>
+                </form>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary btn-lg" id="buttonAddWork" ng-click="btnAddView = !btnAddView" ng-disabled = "btnAddView">
+        Добавить место работы
+    </button>
+
+    <form ng-show="btnAddView">
+        <div class="form-row" >
+            <div class="form-group col">
+                <label for="inputOrganization">Организация</label>
+                <input type="text" class="form-control" id="inputOrganization"
+                       placeholder="Введите название" ng-model="newWork.organization">
+            </div>
+            <div class="form-group col">
+                <label for="inputPost">Должность</label>
+                <input type="text" class="form-control" id="inputPost" placeholder="Введите должность"
+                       ng-model="newWork.post">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputProgress">Должностные обязанности и достижения</label>
+            <input type="text" class="form-control" id="inputProgress" placeholder="Опишите, что вы делали"
+                   ng-model="newWork.progress">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="inputStartWork">Устроился</label>
+                <input type="date" class="form-control" id="inputStartWork" ng-model="newWork.startWork">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputEndWork">Уволился</label>
+                <input type="date" class="form-control" id="inputEndWork" ng-model="newWork.endWork">
+            </div>
+        </div>
+        <button class="btn btn-primary" ng-click="createNewWork(1)">Сохранить</button>
+        <button class="btn btn-danger" ng-click="btnAddView = !btnAddView">Удалить</button>
+    </form>
+
+</div>
+
+</body>
+</html>
